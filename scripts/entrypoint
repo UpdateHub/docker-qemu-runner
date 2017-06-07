@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -z "$IMAGE" ]; then
+	echo "Please provide the image name (IMAGE environment)"
+	exit 1
+fi
+
+if [ ! -e "/state" ]; then
+	echo "Please provide the directory of images as a volume."
+	exit 1
+fi
+
+if [ -z "$MAC" ]; then
+	echo "INFO: If need, a MAC can be reused by passing MAC=<mac> (MAC environment)"
+fi
+
+exec ./updatehub-qemu /state/$IMAGE "$MAC"
