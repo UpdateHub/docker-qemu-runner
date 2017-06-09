@@ -3,7 +3,8 @@ FROM alpine:3.6
 MAINTAINER https://github.com/OSSystems
 
 # Install QEMU/KVM
-RUN apk add --no-cache qemu-system-x86_64 ovmf
+RUN apk add --no-cache \
+        qemu-system-x86_64 ovmf
 
 ADD scripts/updatehub-qemu ./
 ADD scripts/entrypoint ./
