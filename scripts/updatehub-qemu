@@ -18,7 +18,7 @@ export QEMU_AUDIO_DRV=none
 
 exec qemu-system-x86_64 \
     -cpu qemu64,+ssse3 \
-    -m 512M \
+    -m 128M \
 	-drive if=pflash,readonly,file=/usr/share/ovmf/bios.bin \
 	-drive if=virtio,format=raw,file=${IMAGE} \
     -net nic,macaddr=${MAC} \
