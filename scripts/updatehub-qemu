@@ -5,6 +5,7 @@
 
 set -e
 
+IMAGE=$1
 MAC=$2
 
 [ -n "$MAC" ] || MAC="52:54:00$(od -txC -An -N3 /dev/urandom|tr \  :)"
@@ -15,7 +16,7 @@ exec qemu-system-x86_64 \
     -cpu qemu64,+ssse3 \
     -m 512M \
 	-drive if=pflash,readonly,file=/usr/share/ovmf/bios.bin \
-	-drive if=virtio,format=raw,file=$1 \
+	-drive if=virtio,format=raw,file=${IMAGE} \
     -net nic,macaddr=${MAC} \
     -net user,hostfwd=tcp::22-:22 \
 	-nographic
