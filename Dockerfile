@@ -1,3 +1,7 @@
+# Copyright (C) 2017 O.S. Systems Sofware LTDA
+#
+# SPDX-License-Identifier:     GPL-2.0
+
 FROM alpine:3.6
 
 MAINTAINER https://github.com/OSSystems

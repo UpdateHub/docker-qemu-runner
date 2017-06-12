@@ -1,4 +1,8 @@
 #!/bin/sh
+# Copyright (C) 2017 O.S. Systems Sofware LTDA
+#
+# SPDX-License-Identifier:     GPL-2.0
+#
 # NOTE: current settings forward
 #   ssh: port 8822
 #   serial console: stdio
