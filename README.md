@@ -7,6 +7,7 @@ a QEMU runner for UpdateHub test and development.
 Features
 --------
 
+* i386 emulation
 * x86-64 emulation
 * fixed and dynamic MAC address setting
 * persistent image support
@@ -16,6 +17,7 @@ Usage
 
 The following environmnts are available:
 
+* ARCH=`<architecutre>` (required)
 * IMAGE=`<image name>` (required)
 * MAC=`<mac address>` (optional)
 
@@ -26,6 +28,7 @@ image is loaded from the `/state` volume so an example usage is:
 ```
 docker run --rm \
        -v $PWD:/state \
+       -e ARCH=x86-64 \
        -e IMAGE=updatehub-image-minimal-uh-qemu-x86-64.wic \
        -it updatehub/qemu-runner
 ```
