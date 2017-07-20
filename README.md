@@ -7,6 +7,7 @@ a QEMU runner for UpdateHub test and development.
 Features
 --------
 
+* ARM emulation
 * i386 emulation
 * x86-64 emulation
 * fixed and dynamic MAC address setting
