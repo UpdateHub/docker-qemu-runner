@@ -10,8 +10,9 @@ MAINTAINER https://github.com/OSSystems
 RUN apk add --no-cache \
         curl \
         xz \
-        qemu-system-x86_64 \
-        qemu-system-i386
+        qemu-system-arm \
+        qemu-system-i386 \
+        qemu-system-x86_64
 
 # Download ovmf from Arch Linux as it contains binaries for i386 and
 # x86-64

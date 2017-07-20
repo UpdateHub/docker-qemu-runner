@@ -18,6 +18,22 @@ MAC=$3
 export QEMU_AUDIO_DRV=none
 
 case "${ARCH}" in
+    arm)
+    tar -C /tmp -x -f ${IMAGE}
+
+    qemu-system-arm \
+         -M vexpress-a9 \
+         -m 128M \
+         -kernel /tmp/u-boot.elf \
+         -drive file=/tmp/nor0,if=pflash,format=raw \
+         -drive file=/tmp/nor1,if=pflash,format=raw \
+         -net nic,macaddr=${MAC} \
+         -net user,hostfwd=tcp::22-:22 \
+         -nographic
+
+    tar -C /tmp -c u-boot.elf nor0 nor1 -f ${IMAGE}
+    rm /tmp/u-boot.elf /tmp/nor0 /tmp/nor1
+    ;;
     i386)
     exec qemu-system-i386 \
          -M pc \
@@ -40,7 +56,7 @@ case "${ARCH}" in
          -nographic
     ;;
     *)
-    echo "ERROR: Unknown ARCH value. Valid ones are: i386 or x86-64"
+    echo "ERROR: Unknown ARCH value. Valid ones are: arm, i386 or x86-64"
     exit 1
     ;;
 esac

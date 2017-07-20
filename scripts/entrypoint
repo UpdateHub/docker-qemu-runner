@@ -5,7 +5,7 @@
 
 if [ -z "$ARCH" ]; then
     echo "Please provide the architecture to use (ARCH environment)"
-    echo "  Known values are: i386 or x86-64"
+    echo "  Known values are: arm, i386 or x86-64"
     exit 1
 fi
 
