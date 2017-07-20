@@ -4,23 +4,23 @@
 # SPDX-License-Identifier:     GPL-2.0
 
 if [ -z "$ARCH" ]; then
-	echo "Please provide the architecture to use (ARCH environment)"
-	echo "  Known values are: i386 or x86-64"
-	exit 1
+    echo "Please provide the architecture to use (ARCH environment)"
+    echo "  Known values are: i386 or x86-64"
+    exit 1
 fi
 
 if [ -z "$IMAGE" ]; then
-	echo "Please provide the image name (IMAGE environment)"
-	exit 1
+    echo "Please provide the image name (IMAGE environment)"
+    exit 1
 fi
 
 if [ ! -e "/state" ]; then
-	echo "Please provide the directory of images as a volume."
-	exit 1
+    echo "Please provide the directory of images as a volume."
+    exit 1
 fi
 
 if [ -z "$MAC" ]; then
-	echo "INFO: If need, a MAC can be reused by passing MAC=<mac> (MAC environment)"
+    echo "INFO: If need, a MAC can be reused by passing MAC=<mac> (MAC environment)"
 fi
 
 exec ./updatehub-qemu "$ARCH" /state/"$IMAGE" "$MAC"
