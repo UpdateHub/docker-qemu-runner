@@ -18,6 +18,8 @@ RUN echo "bef6f80793cc56fa3f3ff61dac22448c  ovmf-1-r21243.3858b4a1ff-1-any.pkg.t
 
 RUN apk del .build-dependencies
 
+RUN echo http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories
+
 # Install QEMU/KVM
 RUN apk add --no-cache \
         qemu-system-arm \
