@@ -23,7 +23,7 @@ case "${ARCH}" in
 
     qemu-system-arm \
          -M vexpress-a9 \
-         -m 128M \
+         -m 256M \
          -kernel /tmp/u-boot.elf \
          -drive file=/tmp/nor0,if=pflash,format=raw \
          -drive file=/tmp/nor1,if=pflash,format=raw \
@@ -37,7 +37,7 @@ case "${ARCH}" in
     i386)
     exec qemu-system-i386 \
          -M pc \
-         -m 128M \
+         -m 256M \
          -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_ia32.bin \
          -drive if=ide,format=raw,file=${IMAGE} \
          -net nic,macaddr=${MAC} \
@@ -47,7 +47,7 @@ case "${ARCH}" in
     x86-64)
     exec qemu-system-x86_64 \
          -cpu qemu64,+ssse3 \
-         -m 128M \
+         -m 256M \
          -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin \
          -drive if=pflash,format=raw,file=/usr/share/ovmf/ovmf_vars_x64.bin \
          -drive if=virtio,format=raw,file=${IMAGE} \
