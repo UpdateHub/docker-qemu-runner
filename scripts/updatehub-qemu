@@ -34,16 +34,6 @@ case "${ARCH}" in
     tar -C /tmp -c u-boot.elf nor0 nor1 -f ${IMAGE}
     rm /tmp/u-boot.elf /tmp/nor0 /tmp/nor1
     ;;
-    i386)
-    exec qemu-system-i386 \
-         -M pc \
-         -m 256M \
-         -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_ia32.bin \
-         -drive if=ide,format=raw,file=${IMAGE} \
-         -net nic,macaddr=${MAC} \
-         -net user,hostfwd=tcp::22-:22 \
-         -nographic
-    ;;
     x86-64)
     exec qemu-system-x86_64 \
          -cpu qemu64,+ssse3 \

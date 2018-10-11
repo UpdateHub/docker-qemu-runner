@@ -8,7 +8,6 @@ Features
 --------
 
 * ARM emulation
-* i386 emulation
 * x86-64 emulation
 * fixed and dynamic MAC address setting
 * persistent image support

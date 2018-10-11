@@ -23,7 +23,6 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories
 # Install QEMU/KVM
 RUN apk add --no-cache \
         qemu-system-arm \
-        qemu-system-i386 \
         qemu-system-x86_64
 
 ADD scripts/updatehub-qemu ./
