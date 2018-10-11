@@ -38,8 +38,8 @@ case "${ARCH}" in
     exec qemu-system-x86_64 \
          -cpu qemu64,+ssse3 \
          -m 256M \
-         -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin \
-         -drive if=pflash,format=raw,file=/usr/share/ovmf/ovmf_vars_x64.bin \
+         -drive if=pflash,format=raw,readonly,file=/usr/share/OVMF/OVMF_CODE.fd \
+         -drive if=pflash,format=raw,file=/usr/share/OVMF/OVMF_VARS.fd \
          -drive if=virtio,format=raw,file=${IMAGE} \
          -net nic,macaddr=${MAC} \
          -net user,hostfwd=tcp::22-:22 \
