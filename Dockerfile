@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier:     GPL-2.0
 
-FROM alpine:3.11
+FROM alpine:3.12
 
 MAINTAINER https://github.com/OSSystems
 
