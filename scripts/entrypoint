@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier:     GPL-2.0
 
+sysctl -w net.ipv4.ip_forward=1
+
 if [ -z "$ARCH" ]; then
     echo "Please provide the architecture to use (ARCH environment)"
     echo "  Known values are: arm or x86-64"
