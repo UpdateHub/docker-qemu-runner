@@ -15,13 +15,13 @@ Features
 Usage
 -----
 
-The following environmnts are available:
+The following environments are available:
 
-* ARCH=`<architecutre>` (required)
+* ARCH=`<architecture>` (required)
 * IMAGE=`<image name>` (required)
 * MAC=`<mac address>` (optional)
 
-The `IMAGE` environmnt points to the image name to be loaded by the
+The `IMAGE` environment points to the image name to be loaded by the
 virtual machine (e.g: `updatehub-image-minimal-uh-qemu-x86-64.wic`). The
 image is loaded from the `/state` volume so an example usage is:
 
